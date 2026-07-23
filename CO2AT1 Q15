@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    int x[] = {1, 4, 5, 9, 2};
+    int y[] = {2, 6, 5, 1, 3};
+    int n = 5;
+
+    float min = 1000, d;
+    int p1, p2;
+
+    for (int i = 0; i < n - 1; i++) {
+        for (int j = i + 1; j < n; j++) {
+            d = sqrt((x[j]-x[i])*(x[j]-x[i]) +
+                     (y[j]-y[i])*(y[j]-y[i]));
+
+            printf("Distance between (%d,%d) and (%d,%d) = %.2f\n",
+                   x[i], y[i], x[j], y[j], d);
+
+            if (d < min) {
+                min = d;
+                p1 = i;
+                p2 = j;
+            }
+        }
+    }
+
+    printf("\nClosest Pair: (%d,%d) and (%d,%d)\n",
+           x[p1], y[p1], x[p2], y[p2]);
+    printf("Minimum Distance = %.2f\n", min);
+
+    return 0;
+}
