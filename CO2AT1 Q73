@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int main() {
+    int arr[] = {31, 14, 29, 14, 52, 67, 14};
+    int n = 7;
+    int key = 14;
+    int comparisons = 0;
+
+    for (int i = 0; i < n; i++) {
+        comparisons++;
+
+        if (arr[i] == key) {
+            printf("Element found at index %d\n", i);
+            printf("Comparisons = %d\n", comparisons);
+            return 0;
+        }
+    }
+
+    printf("Element not found\n");
+    return 0;
+}
